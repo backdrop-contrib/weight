@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the Weight module.
+ */
+
+/**
+ * Implements hook_field_schema().
+ */
+function weight_field_schema($field) {
+  return array(
+    'columns' => array(
+      'value' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+    ),
+    'indexes' => array(
+      'value' => array('value'),
+    ),
+  );
+}
