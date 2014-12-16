@@ -73,7 +73,7 @@ function weight_field_widget_settings_form($field, $instance) {
  * Implements hook_field_widget_form().
  */
 function weight_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
-  $range = $instance['settings']['range'];
+  $range = $instance['widget']['settings']['range'];
 
   $element += array(
     '#type' => 'select',
