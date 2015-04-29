@@ -94,7 +94,7 @@ function weight_update_7301(&$sandbox) {
       ->fields('w')
       ->condition('entity_id', $sandbox['last'], '>')
       ->orderBy('entity_id')
-      ->range(0, 200)
+      ->range(0, 10)
       ->execute();
 
     foreach ($weights as $weight) {
