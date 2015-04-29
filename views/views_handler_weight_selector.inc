@@ -83,11 +83,12 @@ class views_handler_weight_selector extends views_handler_field {
 
   function views_form_submit($form, &$form_state) {
     $values = $form_state['values'];
-    $field = str_replace('_selector', '' , $values['views_field']);
+    $field_name = str_replace('_selector', '' , $values['views_field']);
 
     foreach ($values[$values['views_field']] as $value) {
       $entity = $value['entity'];
-      $entity->{$field}[$entity->language][0]['value'] = $value['weight'];
+      $lang = field_language($values['entity_type'], $entity, $field_name);
+      $entity->{$field_name}[$lang][0]['value'] = $value['weight'];
       entity_save($values['entity_type'], $entity);
     }
   }
