@@ -20,6 +20,7 @@ function weight_field_views_data($field) {
       $selector_field['title short'] = $title;
       $selector_field['field']['handler'] = 'views_handler_weight_selector';
       $selector_field['field']['click sortable'] = FALSE;
+      $selector_field['field']['additional fields'][] = 'entity_id';
       $data['field_data_' . $field_name][$field_name . '_selector'] = $selector_field;
     }
   }
