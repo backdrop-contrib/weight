@@ -52,11 +52,7 @@ class views_handler_weight_selector extends views_handler_field {
 
     // At this point, the query has already been run, so we can access the results
     foreach ($this->view->result as $row_index => $row) {
-      $alias = $this->table_alias;
-      $entity_id = $row->{$alias . '_entity_id'};
-
-      $entity = entity_load($entity_type, array($entity_id));
-      $entity = $entity[$entity_id];
+      $entity = entity_load($entity_type, array($row->{$entity_key}));
 
       $form[$this->options['id']][$row_index]['weight'] = array(
         '#type' => 'select',
@@ -90,7 +86,7 @@ class views_handler_weight_selector extends views_handler_field {
     $field_name = str_replace('_selector', '' , $values['views_field']);
 
     foreach ($values[$values['views_field']] as $value) {
-      $entity = $value['entity'];
+      $entity = array_pop($value['entity']);
       $lang = field_language($values['entity_type'], $entity, $field_name);
       $entity->{$field_name}[$lang][0]['value'] = $value['weight'];
       entity_save($values['entity_type'], $entity);
