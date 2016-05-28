@@ -36,6 +36,10 @@ class views_handler_weight_selector extends views_handler_field {
     return '<!--form-item-' . $this->options['id'] . '--' . $this->view->row_index . '-->';
   }
 
+  function access() {
+    return user_access('assign node weight');
+  }
+
   function views_form(&$form, &$form_state) {
     // The view is empty, abort.
     if (empty($this->view->result)) {
@@ -59,7 +63,6 @@ class views_handler_weight_selector extends views_handler_field {
         '#options' =>  $options,
         '#default_value' => $this->get_value($row),
         '#attributes' => array('class' => array('weight-selector')),
-        '#access' => user_access('assign node weight'),
       );
 
       $form[$this->options['id']][$row_index]['entity'] = array(
