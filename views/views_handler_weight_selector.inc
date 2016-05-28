@@ -66,6 +66,8 @@ class views_handler_weight_selector extends views_handler_field {
 
       $form[$this->options['id']][$row_index]['weight'] = array(
         '#type' => 'select',
+        '#title' => t('Weight for row @number', array('@number' => $row_index + 1)),
+        '#title_display' => 'invisible',
         '#options' =>  $options,
         '#default_value' => $this->get_value($row),
         '#attributes' => array('class' => array('weight-selector')),
