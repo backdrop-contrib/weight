@@ -51,8 +51,14 @@ class views_handler_weight_selector extends views_handler_field {
     );
 
     $options = _weight_get_options($this->options['weight_range']);
-    $entity_type = $this->view->base_table;
-    $entity_key = $this->view->base_field;
+    $entities = entity_get_info();
+
+    foreach ($entities as $type => $entity_info) {
+      if (isset($entity_info['base table']) && $this->view->base_table == $entity_info['base table']) {
+        $entity_type = $type;
+        $entity_key = $entity_info['entity keys']['id'];
+      }
+    }
 
     // At this point, the query has already been run, so we can access the results
     foreach ($this->view->result as $row_index => $row) {
