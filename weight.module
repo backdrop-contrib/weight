@@ -120,6 +120,18 @@ function weight_field_is_empty($item, $field) {
 }
 
 /**
+ * Implements hook_permission().
+ */
+function weight_permission() {
+  return array(
+    'assign node weight' => array(
+      'title' => t('Assign node weights'),
+      'description' => t('Allow modification of node weights.'),
+    ),
+  );
+}
+
+/**
  * Implements hook_views_api().
  */
 function weight_views_api() {
