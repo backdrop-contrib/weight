@@ -1,5 +1,5 @@
-Overview
---------
+Weight
+======
 This module provides a weight field that can be added to any fieldable entity.
 The weight field can be used to provide customized sorting.
 
