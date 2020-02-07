@@ -1,7 +1,10 @@
 Weight
 ======
 This module provides a weight field that can be added to any fieldable entity.
-The weight field can be used to provide customized sorting.
+The weight field can be used to provide customized sorting. 
+
+This module also provides a Views field handler that allows users with the appropriate permission 
+to rearrange the rows of a Views table (drag and drop) and save the new order. 
 
 Installation
 ------------
