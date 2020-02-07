@@ -36,6 +36,15 @@ function weight_field_widget_info() {
 }
 
 /**
+ * Implements hook_autoload_info().
+ */
+function weight_autoload_info() {
+  return array(
+    'views_handler_weight_selector' => 'views/views_handler_weight_selector.inc',
+  );
+}
+
+/**
  * Implements hook_field_widget_settings_form().
  */
 function weight_field_widget_settings_form($field, $instance) {
@@ -137,7 +146,7 @@ function weight_permission() {
 function weight_views_api() {
   return array(
     'api' => 3,
-    'path' => drupal_get_path('module', 'weight') . '/views',
+    'path' => backdrop_get_path('module', 'weight') . '/views',
   );
 }
 
@@ -163,7 +172,7 @@ function weight_preprocess_views_view_table(&$variables) {
     $table_id = 'weight-table-' . $variables['id'];
     $variables['attributes_array']['id'] = $table_id;
 
-    drupal_add_tabledrag($table_id, 'order', 'sibling', 'weight-selector');
+    backdrop_add_tabledrag($table_id, 'order', 'sibling', 'weight-selector');
   }
 }
 

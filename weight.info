@@ -1,9 +1,9 @@
+type = module
 name = Weight
 description = Provides a weight field that allows entities to be ordered.
-core = 7.x
+backdrop = 1.x
 package = Fields
 
 dependencies[] = field
 dependencies[] = entity
 
-files[] = views/views_handler_weight_selector.inc
