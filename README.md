@@ -23,7 +23,7 @@ Issues
 ------
 
 Bugs and Feature requests should be reported in the Issue Queue:
-https://github.com/backdrop-contrib/hms_field/issues.
+https://github.com/backdrop-contrib/weight/issues.
 
 Current Maintainers
 -------------------
