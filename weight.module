@@ -170,7 +170,7 @@ function weight_preprocess_views_view_table(&$variables) {
       $variables['row_classes'][$key][] = 'draggable';
     }
     $table_id = 'weight-table-' . $variables['id'];
-    $variables['attributes_array']['id'] = $table_id;
+    $variables['attributes']['id'] = $table_id;
 
     backdrop_add_tabledrag($table_id, 'order', 'sibling', 'weight-selector');
   }

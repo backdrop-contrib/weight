@@ -88,8 +88,14 @@ class views_handler_weight_selector extends views_handler_field {
       '#type' => 'value',
       '#value' => $this->field,
     );
+    
+    $form['submit'] = array(
+      '#type' => 'submit',
+      '#value' => t('Save'),
+      '#weight' => 99,
+      '#action' => request_uri(),
+    );
 
-    $form['#action'] = request_uri();
   }
 
   function views_form_submit($form, &$form_state) {

@@ -5,5 +5,5 @@ backdrop = 1.x
 package = Fields
 
 dependencies[] = field
-dependencies[] = entity
+dependencies[] = entity_plus
 
