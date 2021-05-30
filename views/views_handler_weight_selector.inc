@@ -95,7 +95,6 @@ class views_handler_weight_selector extends views_handler_field {
       '#weight' => 99,
       '#action' => request_uri(),
     );
-
   }
 
   function views_form_submit($form, &$form_state) {
@@ -106,7 +105,7 @@ class views_handler_weight_selector extends views_handler_field {
       $entity = array_pop($value['entity']);
       $lang = field_language($values['entity_type'], $entity, $field_name);
       $entity->{$field_name}[$lang][0]['value'] = $value['weight'];
-      entity_save($values['entity_type'], $entity);
+      entity_plus_save($values['entity_type'], $entity);
     }
   }
 }

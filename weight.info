@@ -6,4 +6,3 @@ package = Fields
 
 dependencies[] = field
 dependencies[] = entity_plus
-
