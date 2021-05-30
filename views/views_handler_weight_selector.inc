@@ -88,7 +88,7 @@ class views_handler_weight_selector extends views_handler_field {
       '#type' => 'value',
       '#value' => $this->field,
     );
-    
+
     $form['submit'] = array(
       '#type' => 'submit',
       '#value' => t('Save'),
@@ -106,7 +106,7 @@ class views_handler_weight_selector extends views_handler_field {
       $entity = array_pop($value['entity']);
       $lang = field_language($values['entity_type'], $entity, $field_name);
       $entity->{$field_name}[$lang][0]['value'] = $value['weight'];
-      entity_save($values['entity_type'], $entity);
+      $entity->save();
     }
   }
 }
