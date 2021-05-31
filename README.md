@@ -12,12 +12,17 @@ Installation
 - Install this module using the official Backdrop CMS instructions at
   https://backdropcms.org/guide/modules.
 - Add the weight field to an entity or content type.
+- Drag and drop (optional): Create a Views table and add the weight field (listed as FIELD_NAME selector).
+  Add the Weight field for sorting for both the page with drag and drop and the View which will
+  display the results. Ensure that the Views table's sort (in the table's settings) is set to
+  none.
 
 Configuration options
 -------------
-  - Range: The range is set when adding a weight field to an entity. It defines 
-    that fields available weight range. For example, a range of 20 will allow 
-    you to select a weight between -20 and 20.
+
+- Range: The range is set when adding a weight field to an entity. It defines 
+  that fields available weight range. For example, a range of 20 will allow 
+  you to select a weight between -20 and 20.
 
 Issues
 ------
