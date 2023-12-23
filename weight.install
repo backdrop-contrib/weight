@@ -21,3 +21,10 @@ function weight_field_schema($field) {
     ),
   );
 }
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function weight_update_last_removed() {
+  return 7301;
+}
