@@ -17,7 +17,7 @@ function weight_field_info() {
         'range' => 20,
       ),
       'default_widget' => 'weight_selector',
-      'default_formatter' => 'number_integer',
+      'default_formatter' => 'weight_integer',
       'property_type' => 'integer',
     ),
   );
