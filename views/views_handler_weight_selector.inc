@@ -43,6 +43,7 @@ class views_handler_weight_selector extends views_handler_field {
   function views_form(&$form, &$form_state) {
     // The view is empty, abort.
     if (empty($this->view->result)) {
+      $form['#access'] = FALSE;
       return;
     }
 
