@@ -74,10 +74,18 @@ function weight_field_widget_form(&$form, &$form_state, $field, $instance, $lang
     $range = 20;
   }
 
+  $default_value = 0;
+  if (isset($items[$delta]) && !is_array($items[$delta])) {
+    $default_value = $items[$delta];
+  }
+  else {
+    $default_value = $items[$delta]['value'];
+  }
+
   $element += array(
     '#type' => 'select',
     '#options' => _weight_get_options($range),
-    '#default_value' => isset($items[$delta]) ? $items[$delta] : 0,
+    '#default_value' => $default_value,
     '#element_validate' => array('weight_selector_validate'),
   );
 
