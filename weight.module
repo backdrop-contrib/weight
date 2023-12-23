@@ -75,11 +75,11 @@ function weight_field_widget_form(&$form, &$form_state, $field, $instance, $lang
   }
 
   $default_value = 0;
-  if (isset($items[$delta]) && !is_array($items[$delta])) {
-    $default_value = $items[$delta];
-  }
-  else {
+  if (!empty($items[$delta]['value'])) {
     $default_value = $items[$delta]['value'];
+  }
+  elseif (isset($items[$delta]) && !is_array($items[$delta])) {
+    $default_value = $items[$delta];
   }
 
   $element += array(
